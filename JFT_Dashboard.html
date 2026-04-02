@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X2 Main Line Production Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Share+Tech+Mono&display=swap');
+
+        body {
+            background-color: #000033;
+            /* Dark Navy แบบในรูป */
+            font-family: 'Inter', sans-serif;
+            color: white;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .grid-border {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .label-bg {
+            background-color: #000066;
+        }
+
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+    </style>
+</head>
+
+<body class="h-screen flex flex-col">
+
+    <div class="bg-[#32CD32] py-2 px-6 flex justify-between items-center shadow-lg">
+        <h1 class="text-white text-5xl font-extrabold tracking-tight">X2 MAIN LINE PRODUCTION</h1>
+        <div class="text-white text-right font-bold text-xl">
+            <div id="current-date">2026/04/02 Thursday</div>
+            <div id="current-time" class="text-3xl">11:22:41</div>
+        </div>
+    </div>
+
+    <div class="flex-grow grid grid-cols-12">
+
+        <div class="col-span-9 grid grid-cols-2 border-r border-white/20">
+
+            <div class="col-span-2 grid grid-cols-4 grid-border">
+                <div
+                    class="col-span-1 label-bg p-4 flex items-center justify-center text-2xl font-bold border-r border-white/20">
+                    Product Code
+                </div>
+                <div
+                    class="col-span-3 p-4 flex items-center justify-center text-5xl font-bold tracking-widest text-[#00FFFF]">
+                    69830-0A140
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 grid-border">
+                <div
+                    class="label-bg p-4 flex items-center justify-center text-xl font-bold border-r border-white/20 text-center">
+                    Operator Configuration
+                </div>
+                <div class="p-4 flex items-center justify-center text-4xl  font-bold">
+                    5 People
+                </div>
+            </div>
+            <div class="grid grid-cols-2 grid-border">
+                <div
+                    class="label-bg p-4 flex items-center justify-center text-xl font-bold border-r border-white/20 text-center">
+                    Production Start
+                </div>
+                <div class="p-4 flex items-center justify-center text-4xl  font-bold">
+                    13:50
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 grid-border">
+                <div
+                    class="label-bg p-4 flex items-center justify-center text-xl font-bold border-r border-white/20 text-center">
+                    Plan Quantity
+                </div>
+                <div class="p-4 flex items-center justify-center text-4xl  font-bold">
+                    1200
+                </div>
+            </div>
+            <div class="grid grid-cols-2 grid-border">
+                <div
+                    class="label-bg p-4 flex items-center justify-center text-xl font-bold border-r border-white/20 text-center">
+                    Production Completed
+                </div>
+                <div class="p-4 flex items-center justify-center text-4xl  font-bold text-gray-500">
+                    00:00
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 grid-border">
+                <div
+                    class="label-bg p-4 flex items-center justify-center text-xl font-bold border-r border-white/20 text-center">
+                    Production Planning Time
+                </div>
+                <div class="p-4 flex items-center justify-center text-4xl  font-bold">
+                    4.9H
+                </div>
+            </div>
+            <div class="grid grid-cols-2 grid-border">
+                <div
+                    class="label-bg p-4 flex items-center justify-center text-xl font-bold border-r border-white/20 text-center">
+                    Actual Time Taken
+                </div>
+                <div class="p-4 flex items-center justify-center text-4xl  font-bold">
+                    1.1H
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 grid-border">
+                <div
+                    class="label-bg p-4 flex items-center justify-center text-xl font-bold border-r border-white/20 text-center">
+                    Actual Quantity
+                </div>
+                <div class="p-4 flex items-center justify-center text-4xl  font-bold">
+                    292
+                </div>
+            </div>
+            <div class="grid grid-cols-2 grid-border">
+                <div
+                    class="label-bg p-4 flex items-center justify-center text-xl font-bold border-r border-white/20 text-center">
+                    Completion Rate
+                </div>
+                <div class="p-4 flex items-center justify-center text-4xl  font-bold">
+                    -- %
+                </div>
+            </div>
+        </div>
+
+        <div class="col-span-3 flex flex-col">
+            <div class="flex-1 flex flex-col items-center justify-center p-4 border-b border-white/20">
+                <div class="relative">
+                    <svg class="w-40 h-40 progress-ring">
+                        <circle stroke="rgba(255,255,255,0.1)" stroke-width="12" fill="transparent" r="70" cx="80"
+                            cy="80" />
+                        <circle stroke="#FF4500" stroke-width="12" stroke-dasharray="440" stroke-dashoffset="334"
+                            stroke-linecap="round" fill="transparent" r="70" cx="80" cy="80" />
+                    </svg>
+                    <div class="absolute inset-0 flex items-center justify-center text-3xl font-bold">24%</div>
+                </div>
+                <div class="mt-2 text-center">
+                    <p class="text-sm">Plan: 1200 | Actual: 292</p>
+                    <h3 class="text-lg font-bold text-blue-400">Plan Achievement Rate</h3>
+                </div>
+            </div>
+
+            <div class="flex-1 flex flex-col items-center justify-center p-4">
+                <div class="relative">
+                    <svg class="w-40 h-40 progress-ring">
+                        <circle stroke="rgba(255,255,255,0.1)" stroke-width="12" fill="transparent" r="70" cx="80"
+                            cy="80" />
+                        <circle stroke="#32CD32" stroke-width="12" stroke-dasharray="440" stroke-dashoffset="0"
+                            stroke-linecap="round" fill="transparent" r="70" cx="80" cy="80" />
+                    </svg>
+                    <div class="absolute inset-0 flex items-center justify-center text-3xl font-bold">104%</div>
+                </div>
+                <div class="mt-2 text-center">
+                    <p class="text-sm">Target: 245 | Actual: 256</p>
+                    <h3 class="text-lg font-bold text-blue-400">Productive Achievement Rate</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-4 text-center font-bold text-lg">
+        <div class="bg-[#FF69B4]/80 border-r border-white/20 py-3 flex justify-between px-6 items-center">
+            <span>Machine Malfunction</span>
+            <span class="text-2xl ">0H</span>
+        </div>
+        <div class="bg-[#00CED1]/80 border-r border-white/20 py-3 flex justify-between px-6 items-center">
+            <span>Change the Mold</span>
+            <span class="text-2xl ">0.2H</span>
+        </div>
+        <div class="bg-[#4169E1]/80 border-r border-white/20 py-3 flex justify-between px-6 items-center">
+            <span>Abnormal Material</span>
+            <span class="text-2xl ">0H</span>
+        </div>
+        <div class="bg-[#FFD700]/80 py-3 flex justify-between px-6 items-center text-black">
+            <span>Quality Anomaly</span>
+            <span class="text-2xl ">0H</span>
+        </div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const dateOptions = { year: 'numeric', month: '2-digit', day: '2-digit', weekday: 'long' };
+            document.getElementById('current-date').innerText = now.toLocaleDateString('en-GB', dateOptions).replace(/\//g, '/');
+            document.getElementById('current-time').innerText = now.toLocaleTimeString('en-GB', { hour12: false });
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+
+</html>
